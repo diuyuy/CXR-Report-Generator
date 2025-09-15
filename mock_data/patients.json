@@ -1,0 +1,814 @@
+{
+  "patients": [
+    {
+      "id": "001",
+      "name": "홍길동",
+      "age": 23,
+      "gender": "남",
+      "shootingDate": "2025-08-26",
+      "images": [
+        {
+          "id": "001_000",
+          "filename": "001_000.png",
+          "date": "2025-07-26"
+        },
+        {
+          "id": "001_001",
+          "filename": "001_001.png",
+          "date": "2025-08-26"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pneumonia",
+        "location": "Left upper lung",
+        "size": "Diffuse opacity",
+        "symptoms": "Fever, cough",
+        "finding": "Findings suggestive of pneumonia located at Left upper lung.",
+        "summary": "Patient shows pneumonia findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "002",
+      "name": "김영희",
+      "age": 66,
+      "gender": "여",
+      "shootingDate": "2025-08-06",
+      "images": [
+        {
+          "id": "002_000",
+          "filename": "002_000.png",
+          "date": "2025-07-06"
+        },
+        {
+          "id": "002_001",
+          "filename": "002_001.png",
+          "date": "2025-08-06"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pleural Effusion",
+        "location": "Left lung base",
+        "size": "Large fluid collection",
+        "symptoms": "Dyspnea",
+        "finding": "Findings suggestive of pleural effusion located at Left lung base.",
+        "summary": "Patient shows pleural effusion findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "003",
+      "name": "이철수",
+      "age": 40,
+      "gender": "남",
+      "shootingDate": "2025-03-14",
+      "images": [
+        {
+          "id": "003_000",
+          "filename": "003_000.png",
+          "date": "2025-01-14"
+        },
+        {
+          "id": "003_001",
+          "filename": "003_001.png",
+          "date": "2025-03-14"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Interstitial Lung Disease",
+        "location": "Both lungs",
+        "size": "Reticular pattern",
+        "symptoms": "Exertional dyspnea",
+        "finding": "Findings suggestive of interstitial lung disease located at Both lungs.",
+        "summary": "Patient shows interstitial lung disease findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "004",
+      "name": "박민수",
+      "age": 63,
+      "gender": "여",
+      "shootingDate": "2025-02-25",
+      "images": [
+        {
+          "id": "004_000",
+          "filename": "004_000.png",
+          "date": "2024-12-25"
+        },
+        {
+          "id": "004_001",
+          "filename": "004_001.png",
+          "date": "2025-02-25"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pleural Effusion",
+        "location": "Left lung base",
+        "size": "Large fluid collection",
+        "symptoms": "Dyspnea",
+        "finding": "Findings suggestive of pleural effusion located at Left lung base.",
+        "summary": "Patient shows pleural effusion findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "005",
+      "name": "최수지",
+      "age": 26,
+      "gender": "남",
+      "shootingDate": "2025-07-29",
+      "images": [
+        {
+          "id": "005_000",
+          "filename": "005_000.png",
+          "date": "2025-06-28"
+        },
+        {
+          "id": "005_001",
+          "filename": "005_001.png",
+          "date": "2025-07-29"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pneumonia",
+        "location": "Left upper lung",
+        "size": "Diffuse opacity",
+        "symptoms": "Fever, cough",
+        "finding": "Findings suggestive of pneumonia located at Left upper lung.",
+        "summary": "Patient shows pneumonia findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "006",
+      "name": "정하늘",
+      "age": 38,
+      "gender": "여",
+      "shootingDate": "2025-06-30",
+      "images": [
+        {
+          "id": "006_000",
+          "filename": "006_000.png",
+          "date": "2025-06-16"
+        },
+        {
+          "id": "006_001",
+          "filename": "006_001.png",
+          "date": "2025-06-30"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pneumonia",
+        "location": "Left upper lung",
+        "size": "Diffuse opacity",
+        "symptoms": "Fever, cough",
+        "finding": "Findings suggestive of pneumonia located at Left upper lung.",
+        "summary": "Patient shows pneumonia findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "007",
+      "name": "윤지호",
+      "age": 64,
+      "gender": "남",
+      "shootingDate": "2025-01-10",
+      "images": [
+        {
+          "id": "007_000",
+          "filename": "007_000.png",
+          "date": "2025-01-02"
+        },
+        {
+          "id": "007_001",
+          "filename": "007_001.png",
+          "date": "2025-01-10"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pneumonia",
+        "location": "Left upper lung",
+        "size": "Diffuse opacity",
+        "symptoms": "Fever, cough",
+        "finding": "Findings suggestive of pneumonia located at Left upper lung.",
+        "summary": "Patient shows pneumonia findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "008",
+      "name": "서유리",
+      "age": 75,
+      "gender": "여",
+      "shootingDate": "2025-01-30",
+      "images": [
+        {
+          "id": "008_000",
+          "filename": "008_000.png",
+          "date": "2025-01-21"
+        },
+        {
+          "id": "008_001",
+          "filename": "008_001.png",
+          "date": "2025-01-30"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Interstitial Lung Disease",
+        "location": "Both lungs",
+        "size": "Reticular pattern",
+        "symptoms": "Exertional dyspnea",
+        "finding": "Findings suggestive of interstitial lung disease located at Both lungs.",
+        "summary": "Patient shows interstitial lung disease findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "009",
+      "name": "강준호",
+      "age": 25,
+      "gender": "남",
+      "shootingDate": "2025-09-08",
+      "images": [
+        {
+          "id": "009_000",
+          "filename": "009_000.png",
+          "date": "2025-09-01"
+        },
+        {
+          "id": "009_001",
+          "filename": "009_001.png",
+          "date": "2025-09-08"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Interstitial Lung Disease",
+        "location": "Both lungs",
+        "size": "Reticular pattern",
+        "symptoms": "Exertional dyspnea",
+        "finding": "Findings suggestive of interstitial lung disease located at Both lungs.",
+        "summary": "Patient shows interstitial lung disease findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "010",
+      "name": "한지민",
+      "age": 22,
+      "gender": "여",
+      "shootingDate": "2025-07-29",
+      "images": [
+        {
+          "id": "010_000",
+          "filename": "010_000.png",
+          "date": "2025-06-29"
+        },
+        {
+          "id": "010_001",
+          "filename": "010_001.png",
+          "date": "2025-07-29"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pneumonia",
+        "location": "Left upper lung",
+        "size": "Diffuse opacity",
+        "symptoms": "Fever, cough",
+        "finding": "Findings suggestive of pneumonia located at Left upper lung.",
+        "summary": "Patient shows pneumonia findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "011",
+      "name": "오세훈",
+      "age": 44,
+      "gender": "남",
+      "shootingDate": "2025-08-02",
+      "images": [
+        {
+          "id": "011_000",
+          "filename": "011_000.png",
+          "date": "2025-05-04"
+        },
+        {
+          "id": "011_001",
+          "filename": "011_001.png",
+          "date": "2025-08-02"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pneumonia",
+        "location": "Left upper lung",
+        "size": "Diffuse opacity",
+        "symptoms": "Fever, cough",
+        "finding": "Findings suggestive of pneumonia located at Left upper lung.",
+        "summary": "Patient shows pneumonia findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "012",
+      "name": "류다현",
+      "age": 41,
+      "gender": "여",
+      "shootingDate": "2025-06-03",
+      "images": [
+        {
+          "id": "012_000",
+          "filename": "012_000.png",
+          "date": "2025-06-01"
+        },
+        {
+          "id": "012_001",
+          "filename": "012_001.png",
+          "date": "2025-06-03"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Interstitial Lung Disease",
+        "location": "Both lungs",
+        "size": "Reticular pattern",
+        "symptoms": "Exertional dyspnea",
+        "finding": "Findings suggestive of interstitial lung disease located at Both lungs.",
+        "summary": "Patient shows interstitial lung disease findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "013",
+      "name": "배정우",
+      "age": 46,
+      "gender": "남",
+      "shootingDate": "2025-07-04",
+      "images": [
+        {
+          "id": "013_000",
+          "filename": "013_000.png",
+          "date": "2025-05-02"
+        },
+        {
+          "id": "013_001",
+          "filename": "013_001.png",
+          "date": "2025-07-04"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Interstitial Lung Disease",
+        "location": "Both lungs",
+        "size": "Reticular pattern",
+        "symptoms": "Exertional dyspnea",
+        "finding": "Findings suggestive of interstitial lung disease located at Both lungs.",
+        "summary": "Patient shows interstitial lung disease findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "014",
+      "name": "송하영",
+      "age": 73,
+      "gender": "여",
+      "shootingDate": "2025-01-31",
+      "images": [
+        {
+          "id": "014_000",
+          "filename": "014_000.png",
+          "date": "2025-01-21"
+        },
+        {
+          "id": "014_001",
+          "filename": "014_001.png",
+          "date": "2025-01-31"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Mass",
+        "location": "Right lower lung",
+        "size": "1.5cm x 2.0cm",
+        "symptoms": "Cough, chest discomfort",
+        "finding": "Findings suggestive of mass located at Right lower lung.",
+        "summary": "Patient shows mass findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "015",
+      "name": "조민혁",
+      "age": 77,
+      "gender": "남",
+      "shootingDate": "2025-02-17",
+      "images": [
+        {
+          "id": "015_000",
+          "filename": "015_000.png",
+          "date": "2025-02-13"
+        },
+        {
+          "id": "015_001",
+          "filename": "015_001.png",
+          "date": "2025-02-17"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pleural Effusion",
+        "location": "Left lung base",
+        "size": "Large fluid collection",
+        "symptoms": "Dyspnea",
+        "finding": "Findings suggestive of pleural effusion located at Left lung base.",
+        "summary": "Patient shows pleural effusion findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "016",
+      "name": "김다은",
+      "age": 31,
+      "gender": "여",
+      "shootingDate": "2025-05-07",
+      "images": [
+        {
+          "id": "016_000",
+          "filename": "016_000.png",
+          "date": "2025-05-03"
+        },
+        {
+          "id": "016_001",
+          "filename": "016_001.png",
+          "date": "2025-05-07"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pleural Effusion",
+        "location": "Left lung base",
+        "size": "Large fluid collection",
+        "symptoms": "Dyspnea",
+        "finding": "Findings suggestive of pleural effusion located at Left lung base.",
+        "summary": "Patient shows pleural effusion findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "017",
+      "name": "박시우",
+      "age": 77,
+      "gender": "남",
+      "shootingDate": "2025-03-22",
+      "images": [
+        {
+          "id": "017_000",
+          "filename": "017_000.png",
+          "date": "2025-03-15"
+        },
+        {
+          "id": "017_001",
+          "filename": "017_001.png",
+          "date": "2025-03-22"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pleural Effusion",
+        "location": "Left lung base",
+        "size": "Large fluid collection",
+        "symptoms": "Dyspnea",
+        "finding": "Findings suggestive of pleural effusion located at Left lung base.",
+        "summary": "Patient shows pleural effusion findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "018",
+      "name": "이서연",
+      "age": 69,
+      "gender": "여",
+      "shootingDate": "2025-05-05",
+      "images": [
+        {
+          "id": "018_000",
+          "filename": "018_000.png",
+          "date": "2025-05-01"
+        },
+        {
+          "id": "018_001",
+          "filename": "018_001.png",
+          "date": "2025-05-05"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Mass",
+        "location": "Right lower lung",
+        "size": "1.5cm x 2.0cm",
+        "symptoms": "Cough, chest discomfort",
+        "finding": "Findings suggestive of mass located at Right lower lung.",
+        "summary": "Patient shows mass findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "019",
+      "name": "전준호",
+      "age": 80,
+      "gender": "남",
+      "shootingDate": "2025-03-06",
+      "images": [
+        {
+          "id": "019_000",
+          "filename": "019_000.png",
+          "date": "2025-03-03"
+        },
+        {
+          "id": "019_001",
+          "filename": "019_001.png",
+          "date": "2025-03-06"
+        }
+      ],
+      "diagnosis": {
+        "disease": "COPD",
+        "location": "Both lungs",
+        "size": "Diffuse involvement",
+        "symptoms": "Wheezing, chronic cough",
+        "finding": "Findings suggestive of copd located at Both lungs.",
+        "summary": "Patient shows copd findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "020",
+      "name": "최민경",
+      "age": 71,
+      "gender": "여",
+      "shootingDate": "2025-08-05",
+      "images": [
+        {
+          "id": "020_000",
+          "filename": "020_000.png",
+          "date": "2025-07-05"
+        },
+        {
+          "id": "020_001",
+          "filename": "020_001.png",
+          "date": "2025-08-05"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Tuberculosis",
+        "location": "Right upper lung",
+        "size": "Patchy opacity",
+        "symptoms": "Night sweats, weight loss",
+        "finding": "Findings suggestive of tuberculosis located at Right upper lung.",
+        "summary": "Patient shows tuberculosis findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "021",
+      "name": "하태민",
+      "age": 21,
+      "gender": "남",
+      "shootingDate": "2025-01-15",
+      "images": [
+        {
+          "id": "021_000",
+          "filename": "021_000.png",
+          "date": "2025-01-13"
+        },
+        {
+          "id": "021_001",
+          "filename": "021_001.png",
+          "date": "2025-01-15"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pneumonia",
+        "location": "Left upper lung",
+        "size": "Diffuse opacity",
+        "symptoms": "Fever, cough",
+        "finding": "Findings suggestive of pneumonia located at Left upper lung.",
+        "summary": "Patient shows pneumonia findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "022",
+      "name": "백수진",
+      "age": 64,
+      "gender": "여",
+      "shootingDate": "2025-01-16",
+      "images": [
+        {
+          "id": "022_000",
+          "filename": "022_000.png",
+          "date": "2025-01-12"
+        },
+        {
+          "id": "022_001",
+          "filename": "022_001.png",
+          "date": "2025-01-16"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pneumonia",
+        "location": "Left upper lung",
+        "size": "Diffuse opacity",
+        "symptoms": "Fever, cough",
+        "finding": "Findings suggestive of pneumonia located at Left upper lung.",
+        "summary": "Patient shows pneumonia findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "023",
+      "name": "강지호",
+      "age": 64,
+      "gender": "남",
+      "shootingDate": "2025-01-27",
+      "images": [
+        {
+          "id": "023_000",
+          "filename": "023_000.png",
+          "date": "2025-01-16"
+        },
+        {
+          "id": "023_001",
+          "filename": "023_001.png",
+          "date": "2025-01-27"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Interstitial Lung Disease",
+        "location": "Both lungs",
+        "size": "Reticular pattern",
+        "symptoms": "Exertional dyspnea",
+        "finding": "Findings suggestive of interstitial lung disease located at Both lungs.",
+        "summary": "Patient shows interstitial lung disease findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "024",
+      "name": "윤하늘",
+      "age": 49,
+      "gender": "여",
+      "shootingDate": "2025-04-13",
+      "images": [
+        {
+          "id": "024_000",
+          "filename": "024_000.png",
+          "date": "2025-04-09"
+        },
+        {
+          "id": "024_001",
+          "filename": "024_001.png",
+          "date": "2025-04-13"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Tuberculosis",
+        "location": "Right upper lung",
+        "size": "Patchy opacity",
+        "symptoms": "Night sweats, weight loss",
+        "finding": "Findings suggestive of tuberculosis located at Right upper lung.",
+        "summary": "Patient shows tuberculosis findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "025",
+      "name": "서지민",
+      "age": 33,
+      "gender": "남",
+      "shootingDate": "2025-01-01",
+      "images": [
+        {
+          "id": "025_000",
+          "filename": "025_000.png",
+          "date": "2024-12-21"
+        },
+        {
+          "id": "025_001",
+          "filename": "025_001.png",
+          "date": "2025-01-01"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pneumonia",
+        "location": "Left upper lung",
+        "size": "Diffuse opacity",
+        "symptoms": "Fever, cough",
+        "finding": "Findings suggestive of pneumonia located at Left upper lung.",
+        "summary": "Patient shows pneumonia findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "026",
+      "name": "남도윤",
+      "age": 62,
+      "gender": "여",
+      "shootingDate": "2025-02-08",
+      "images": [
+        {
+          "id": "026_000",
+          "filename": "026_000.png",
+          "date": "2025-02-07"
+        },
+        {
+          "id": "026_001",
+          "filename": "026_001.png",
+          "date": "2025-02-08"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Mass",
+        "location": "Right lower lung",
+        "size": "1.5cm x 2.0cm",
+        "symptoms": "Cough, chest discomfort",
+        "finding": "Findings suggestive of mass located at Right lower lung.",
+        "summary": "Patient shows mass findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "027",
+      "name": "이유진",
+      "age": 49,
+      "gender": "남",
+      "shootingDate": "2025-03-07",
+      "images": [
+        {
+          "id": "027_000",
+          "filename": "027_000.png",
+          "date": "2025-03-01"
+        },
+        {
+          "id": "027_001",
+          "filename": "027_001.png",
+          "date": "2025-03-07"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Tuberculosis",
+        "location": "Right upper lung",
+        "size": "Patchy opacity",
+        "symptoms": "Night sweats, weight loss",
+        "finding": "Findings suggestive of tuberculosis located at Right upper lung.",
+        "summary": "Patient shows tuberculosis findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "028",
+      "name": "문채린",
+      "age": 79,
+      "gender": "여",
+      "shootingDate": "2025-08-30",
+      "images": [
+        {
+          "id": "028_000",
+          "filename": "028_000.png",
+          "date": "2025-08-21"
+        },
+        {
+          "id": "028_001",
+          "filename": "028_001.png",
+          "date": "2025-08-30"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Pleural Effusion",
+        "location": "Left lung base",
+        "size": "Large fluid collection",
+        "symptoms": "Dyspnea",
+        "finding": "Findings suggestive of pleural effusion located at Left lung base.",
+        "summary": "Patient shows pleural effusion findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "029",
+      "name": "황서준",
+      "age": 70,
+      "gender": "남",
+      "shootingDate": "2025-03-03",
+      "images": [
+        {
+          "id": "029_000",
+          "filename": "029_000.png",
+          "date": "2025-03-01"
+        },
+        {
+          "id": "029_001",
+          "filename": "029_001.png",
+          "date": "2025-03-03"
+        }
+      ],
+      "diagnosis": {
+        "disease": "Mass",
+        "location": "Right lower lung",
+        "size": "1.5cm x 2.0cm",
+        "symptoms": "Cough, chest discomfort",
+        "finding": "Findings suggestive of mass located at Right lower lung.",
+        "summary": "Patient shows mass findings. Recommend further clinical correlation."
+      }
+    },
+    {
+      "id": "030",
+      "name": "고은별",
+      "age": 31,
+      "gender": "여",
+      "shootingDate": "2025-02-23",
+      "images": [
+        {
+          "id": "030_000",
+          "filename": "030_000.png",
+          "date": "2025-02-21"
+        },
+        {
+          "id": "030_001",
+          "filename": "030_001.png",
+          "date": "2025-02-23"
+        }
+      ],
+      "diagnosis": {
+        "disease": "COPD",
+        "location": "Both lungs",
+        "size": "Diffuse involvement",
+        "symptoms": "Wheezing, chronic cough",
+        "finding": "Findings suggestive of copd located at Both lungs.",
+        "summary": "Patient shows copd findings. Recommend further clinical correlation."
+      }
+    }
+  ]
+}
