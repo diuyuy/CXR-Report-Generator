@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { QUERY_KEYS } from "@/constants/query-keys";
 import { formatDate } from "@/lib/utils";
-import sessionMocks from "../../../mock_data/sessions.json";
+import sessionMocks from "../../../../mock_data/sessions.json";
 
 type ChatSummary = {
   id: string;
@@ -25,6 +25,8 @@ const fetchChats = async () => {
   console.log(dateMap);
   return dateMap;
 };
+
+// TODO: 무한 스크롤로 변경 필요
 
 export const useChatsQuery = () => {
   return useQuery({

@@ -4,7 +4,7 @@ import { PlusIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import ChatsTab from "./chats-tab";
+import ChatsTab from "../chats/components/chats-tab";
 import ReportsTab from "./reports-tab";
 
 export default function NavbarTabs() {

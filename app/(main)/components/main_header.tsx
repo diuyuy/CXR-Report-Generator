@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-export default function MainHeader() {
+export default function AppHeader() {
   return (
-    <header className="flex-1 flex justify-between items-center">
-      <nav>
+    <header className="hd-height flex justify-between items-center">
+      <div className="flex-1" />
+      <nav className="flex-1">
         <ul className="flex gap-2 sm:gap-4 md:gap-6 lg:gap-8 hd-text-props mr-3">
           <li>
             <Link href={"#"}>PATIENTS</Link>

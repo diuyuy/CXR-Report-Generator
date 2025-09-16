@@ -6,7 +6,6 @@ import { Separator } from "@/components/ui/separator";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import MainHeader from "./components/main_header";
 import MainSidebar from "./components/main_navbar";
-import NavbarTrigger from "./components/navbar-trigger";
 
 export default function MainLayout({ children }: PropsWithChildren) {
   const pathname = usePathname();
@@ -23,12 +22,7 @@ export default function MainLayout({ children }: PropsWithChildren) {
     >
       <MainSidebar />
       <SidebarInset>
-        <div className="hd-height flex justify-between items-center">
-          <div className="flex-1">
-            <NavbarTrigger />
-          </div>
-          <MainHeader />
-        </div>
+        <MainHeader />
         <Separator />
         {children}
       </SidebarInset>
