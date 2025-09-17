@@ -6,7 +6,6 @@ import sessionMocks from "../../../../mock_data/sessions.json";
 const fetchChatDetail = async (chatId: string) => {
   const { sessions } = sessionMocks;
   const { patients } = patientsMocks;
-  console.log(">>>>>>>>>>>>>>>>");
 
   const session = sessions.find((session) => session.id === chatId);
   if (!session) return session;
@@ -21,9 +20,8 @@ const fetchChatDetail = async (chatId: string) => {
 };
 
 export const useChatDetailQuery = (id: string) => {
-  console.log("sdfsdfsdfsdfafdjkaslfj;l");
   return useQuery({
     queryKey: [QUERY_KEYS.CHATS, id],
-    queryFn: async () => await fetchChatDetail(id),
+    queryFn: async () => fetchChatDetail(id),
   });
 };

@@ -145,7 +145,20 @@
     @apply text-lg font-medium  text-[oklch(0.7007_0.0153_17.52)];
   }
   .hd-height {
-    @apply h-20;
+    @apply h-18;
+  }
+  .bg-prompt {
+    @apply bg-[oklch(0.2396_0.019_284.87)];
+  }
+  .scrollbar-hide {
+    /* IE, Edge */
+    -ms-overflow-style: none;
+    /* Firefox */
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    /* Chrome, Safari, Opera */
+    display: none;
   }
 }
 

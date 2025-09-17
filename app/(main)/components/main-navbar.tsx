@@ -1,3 +1,5 @@
+"use client";
+
 import type { ComponentProps } from "react";
 import { Separator } from "@/components/ui/separator";
 import {

@@ -3,6 +3,11 @@ import Image from "next/image";
 type Props = {
   content: string;
   image?: string[];
+  patient: {
+    id: string;
+    gender: string;
+    age: number;
+  };
 };
 
 const imgMap = (img: string) => {
@@ -18,15 +23,20 @@ const imgMap = (img: string) => {
   }
 };
 
-export default function UserPrompt({ content, image }: Props) {
+export default function UserPrompt({ content, image, patient }: Props) {
   console.log(image);
   return (
     <div className="flex flex-col gap-4 items-end">
       {image && (
         <div className="bg-[#1E1E28] rounded-xl p-4">
           {image.map((img) => (
-            <div key={img}>
+            <div key={img} className="flex flex-col gap-5">
               <Image src={imgMap(img)} alt={img} width={212} height={212} />
+              <div className="flex flex-col gap-1">
+                <p>ID: {patient.id}</p>
+                <p>GENDER: {patient.gender}</p>
+                <p>AGE: {patient.age}</p>
+              </div>
             </div>
           ))}
         </div>

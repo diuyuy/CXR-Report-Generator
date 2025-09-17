@@ -6,9 +6,10 @@ import { Separator } from "@/components/ui/separator";
 import { ERROR_MESSAGE } from "@/constants/error-messages";
 import { ROLE } from "@/constants/role";
 import { ROUTE_PATHS } from "@/constants/route-paths";
+import PromptInput from "../../components/prompt-input";
 import MarkdownViewer from "../components/markdown-viewer";
 import UserPrompt from "../components/user-prompt";
-import { useChatDetailQuery } from "../hooks/useChatDetailQuery";
+import { useChatDetailQuery } from "../hooks/use-chat-detail-query";
 
 export default function ChatHistoryPage() {
   const params = useParams();
@@ -37,19 +38,28 @@ export default function ChatHistoryPage() {
   }
 
   return (
-    <div className="py-4 px-8 flex flex-col">
-      {chatHistory.messages.map((msg, i) => {
-        return (
-          <div key={msg.messageId}>
-            {i !== 0 && <Separator className="my-8" />}
-            {msg.role === ROLE.ASSISTANT ? (
-              <MarkdownViewer content={msg.content} />
-            ) : (
-              <UserPrompt content={msg.content} image={msg.messageImages} />
-            )}
-          </div>
-        );
-      })}
+    <div className="h-full py-4 px-8 flex flex-col">
+      <div className="flex-1 overflow-y-auto scrollbar-hide p-6">
+        {chatHistory.messages.map((msg, i) => {
+          return (
+            <div key={msg.messageId}>
+              {i !== 0 && <Separator className="my-8" />}
+              {msg.role === ROLE.ASSISTANT ? (
+                <MarkdownViewer content={msg.content} />
+              ) : (
+                <UserPrompt
+                  content={msg.content}
+                  image={msg.messageImages}
+                  patient={chatHistory.patient}
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+      <div className="flex mb-4">
+        <PromptInput />
+      </div>
     </div>
   );
 }

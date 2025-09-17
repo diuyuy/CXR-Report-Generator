@@ -4,8 +4,8 @@ import { usePathname } from "next/navigation";
 import type { PropsWithChildren } from "react";
 import { Separator } from "@/components/ui/separator";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import MainHeader from "./components/main_header";
-import MainSidebar from "./components/main_navbar";
+import MainHeader from "./components/main-header";
+import MainSidebar from "./components/main-navbar";
 
 export default function MainLayout({ children }: PropsWithChildren) {
   const pathname = usePathname();
@@ -22,9 +22,11 @@ export default function MainLayout({ children }: PropsWithChildren) {
     >
       <MainSidebar />
       <SidebarInset>
-        <MainHeader />
-        <Separator />
-        {children}
+        <div className="flex flex-col h-screen">
+          <MainHeader />
+          <Separator />
+          <div className="flex-1 overflow-hidden">{children}</div>
+        </div>
       </SidebarInset>
     </SidebarProvider>
   );
