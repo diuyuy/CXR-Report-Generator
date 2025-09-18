@@ -38,7 +38,7 @@ export default function PromptInput() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full mx-8 sm:mx-10 flex flex-col gap-2 bg-prompt rounded-xl p-2"
+        className="w-full mx-12 sm:mx-20 flex flex-col gap-2 bg-prompt rounded-xl p-2"
       >
         <FormField
           control={form.control}

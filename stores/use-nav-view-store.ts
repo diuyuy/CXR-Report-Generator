@@ -3,7 +3,7 @@ import { create } from "zustand";
 type NavView = "Chat" | "Report";
 
 type NavState = {
-  activeView: "Chat" | "Report";
+  activeView: NavView;
   setActiveView: (view: NavView) => void;
 };
 

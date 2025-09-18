@@ -18,7 +18,7 @@ import { formatDate } from "@/lib/utils";
 import type { ChatSummary } from "../../types/types";
 import { useInfiniteChatsQuery } from "../hooks/use-infinite-chats-query";
 
-export default function ChatsTab() {
+export default function ChatsList() {
   const params = useParams();
   const chatId = params.chatId;
   const observerRef = useRef<HTMLDivElement>(null);
@@ -44,9 +44,6 @@ export default function ChatsTab() {
       (entries) => {
         const firstEntry = entries[0];
 
-        console.log("Observer 호출");
-        console.log("🚀 ~ ChatsTab ~ hasNextPage:", hasNextPage);
-        console.log("🚀 ~ ChatsTab ~ isFetchingNextPage:", isFetchingNextPage);
         if (firstEntry.isIntersecting && hasNextPage && !isFetchingNextPage) {
           fetchNextPage();
         }
@@ -86,7 +83,7 @@ export default function ChatsTab() {
     <div>
       {dates.map((date) => {
         return (
-          <SidebarGroup key={date} className="mt-2">
+          <SidebarGroup key={date}>
             <SidebarGroupLabel className="text-lg">{date}</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
@@ -108,13 +105,13 @@ export default function ChatsTab() {
                     </SidebarMenuItem>
                   );
                 })}
-                <div ref={observerRef} className="h-1" />
-                {isFetchingNextPage && <ClipLoader color="gray" />}
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
         );
       })}
+      <div ref={observerRef} className="h-1" />
+      {isFetchingNextPage && <ClipLoader color="gray" />}
     </div>
   );
 }

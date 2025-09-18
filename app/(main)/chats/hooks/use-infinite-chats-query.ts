@@ -28,5 +28,6 @@ export const useInfiniteChatsQuery = () => {
 
       return lastPageParam + CURSOR;
     },
+    staleTime: 5 * 60 * 1000,
   });
 };

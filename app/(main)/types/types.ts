@@ -19,3 +19,26 @@ export type ChatSummary = {
   createDate: string;
   contentSummary: string;
 };
+
+export type Report = {
+  reportId: string;
+  patientName: string;
+  patientPid: string;
+  examDate: string;
+  age: number;
+  gender: "남" | "여" | "기타";
+  shootingDate: string;
+  disease: string;
+  location: string;
+  size: string;
+  symptoms: string;
+  briefSummary: string;
+  finding: string;
+  recommendation: string;
+  impression: string;
+};
+
+export type ReportTitle = Pick<
+  Report,
+  "reportId" | "patientPid" | "patientName" | "shootingDate"
+>;
