@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { ClipLoader } from "react-spinners";
+import DiagnosisCard from "@/components/diagnosis-card";
+import PatientInformationCard from "@/components/patient-information-card";
+import ReportCard from "@/components/report-card";
 import { ERROR_MESSAGE } from "@/constants/error-messages";
 import { usePdfContext } from "../../contexts/use-pdf-context";
 import { useReportDetailQuery } from "../hooks/use-report-detail-query";
-import DiagnosisCard from "./diagnosis-card";
-import PatientInformationCard from "./patient-information-card";
-import ReportCard from "./report-card";
 
 export default function ReportDetail() {
   const params = useParams();
@@ -31,7 +31,7 @@ export default function ReportDetail() {
     );
   }
   return (
-    <div ref={pdfRef} className="bg-[#070718] flex flex-col mx-14 gap-8">
+    <div ref={pdfRef} className="bg-[#070718] flex flex-col mx-16 gap-6">
       <div className="flex gap-8">
         <div className="flex-1 min-h-100 ">
           <Image
@@ -41,7 +41,7 @@ export default function ReportDetail() {
             height={380}
           />
         </div>
-        <div className="flex-1 flex flex-col gap-8">
+        <div className="flex-1 flex flex-col gap-6">
           <PatientInformationCard
             age={report.age}
             gender={report.gender}
@@ -58,6 +58,7 @@ export default function ReportDetail() {
       <ReportCard title={"Brief summary"} content={report.briefSummary} />
       <ReportCard title={"Finding"} content={report.finding} />
       <ReportCard title={"Recommendation"} content={report.recommendation} />
+      <ReportCard title={"Impression"} content={report.impression} />
     </div>
   );
 }

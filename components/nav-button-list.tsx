@@ -4,14 +4,15 @@ import { ArrowDownToLineIcon, ChevronLeftIcon, PlusIcon } from "lucide-react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { ClipLoader } from "react-spinners";
+import { usePdfContext } from "@/app/(main)/contexts/use-pdf-context";
+import { useIsReportDetail } from "@/app/(main)/hooks/use-is-report-detail";
+import { useReportDetailQuery } from "@/app/(main)/reports/hooks/use-report-detail-query";
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/components/ui/sidebar";
 import { ERROR_MESSAGE } from "@/constants/error-messages";
 import { ROUTE_PATHS } from "@/constants/route-paths";
+import { generatePdf } from "@/lib/apis/report-api";
 import { useNavViewStore } from "@/stores/use-nav-view-store";
-import { usePdfContext } from "../contexts/use-pdf-context";
-import { useIsReportDetail } from "../hooks/use-is-report-detail";
-import { useReportDetailQuery } from "../reports/hooks/use-report-detail-query";
 
 export default function NavButtonList() {
   const { activeView, setActiveView } = useNavViewStore();
@@ -82,7 +83,31 @@ function ReportDetailButtonList() {
   const params = useParams();
   const reportId = params.reportId as string;
   const { setActiveView } = useNavViewStore();
-  const { handleDownloadPdf } = usePdfContext();
+  // const { handleDownloadPdf } = usePdfContext();
+
+  const handleDownloadPdf = async () => {
+    try {
+      const blob = await generatePdf(reportId);
+
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+
+      // 4. 다운로드할 파일 이름을 지정합니다.
+      a.download = "generated-document.pdf";
+
+      // 5. <a> 태그를 body에 추가하고 클릭 이벤트를 실행합니다.
+      document.body.appendChild(a);
+      a.click();
+
+      // 6. 사용이 끝난 객체와 <a> 태그를 정리합니다.
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const { isPending, isError, data: report } = useReportDetailQuery(reportId);
 

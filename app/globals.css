@@ -40,6 +40,9 @@
   --color-card: var(--card);
   --color-navbar-tab: var(--navbar-tab);
   --color-navbar-tab-disabled: var(--navbar-tab-disabled);
+  --color-radio: var(--radio);
+  --color-textbox: var(--textbox);
+  --color-light-gray: var(--light-gray);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -81,6 +84,9 @@
   --sidebar-ring: oklch(0.708 0 0);
   --navbar-tab: oklch(0.7644 0.0011 17.18);
   --navbar-tab-disabled: oklch(0.2396 0.019 284.87);
+  --radio: oklch(0.5295 0.191 278.34);
+  --textbox: oklch(0.2396 0.019 284.87);
+  --light-gray: oklch(0.6401 0 0);
 }
 
 .dark {
@@ -117,6 +123,9 @@
   --sidebar-ring: rgb(115, 115, 115);
   --navbar-tab: rgb(179, 178, 178);
   --navbar-tab-disabled: rgb(30, 30, 40);
+  --radio: oklch(0.5295 0.191 278.34);
+  --textbox: oklch(0.2396 0.019 284.87);
+  --light-gray: oklch(0.6401 0 0);
 }
 
 @layer base {
@@ -142,12 +151,12 @@
 
 @layer utilities {
   .hd-text-props {
-    @apply text-lg font-medium  text-[oklch(0.7007_0.0153_17.52)];
+    @apply text-xl font-medium  text-[oklch(0.7007_0.0153_17.52)];
   }
   .hd-height {
     @apply h-18;
   }
-  .bg-prompt {
+  .bg-textbox {
     @apply bg-[oklch(0.2396_0.019_284.87)];
   }
   .scrollbar-hide {
@@ -166,5 +175,20 @@
 @layer components {
   .report-card {
     @apply bg-[#1e1e28] rounded-2xl shadow-lg w-full py-4 px-6 text-white font-semibold;
+  }
+  .load-image-btn {
+    @apply bg-gradient-to-t from-[#3822FF] to-[#5856D6] py-1 px-5 rounded-2xl text-xs font-semibold hover:cursor-pointer;
+  }
+}
+
+@media print {
+  .pdf-page {
+    @apply w-[210mm] min-h-[297mm] mx-auto p-4;
+  }
+  .hide-on-print {
+    @apply hidden print:hidden;
+  }
+  img {
+    @apply max-w-full h-auto;
   }
 }

@@ -42,3 +42,28 @@ export type ReportTitle = Pick<
   Report,
   "reportId" | "patientPid" | "patientName" | "shootingDate"
 >;
+
+export type PatientImage = {
+  id: string;
+  filename: string;
+  date: string;
+};
+
+type Diagnosis = {
+  disease: string;
+  location: string;
+  size: string;
+  symptoms: string;
+  finding: string;
+  summary: string;
+};
+
+export type Patient = {
+  id: string;
+  name: string;
+  age: number;
+  gender: string;
+  shootingDate: string;
+  images: PatientImage[];
+  diagnosis: Diagnosis;
+};

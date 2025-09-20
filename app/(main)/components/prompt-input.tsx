@@ -1,7 +1,7 @@
 "use client";
 
 import { PaperclipIcon, SendIcon } from "lucide-react";
-import { type ChangeEvent, useState } from "react";
+import { type ChangeEvent, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -11,12 +11,20 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useUploadImgStore } from "@/stores/use-upload-img-store";
 import { usePromptForm } from "../hooks/usePromptForm";
 import { ACCEPTED_FILE_TYPES, type PromptForm } from "../types/form-schemas";
+import UploadedImage from "./uploaded-image";
+
+type UploadedFile = {
+  previewUrl: string;
+  file: File;
+};
 
 export default function PromptInput() {
   const form = usePromptForm();
-  const [previewUrls, setPreviewUrls] = useState<string[]>();
+  const { imgs, setUploadImgs } = useUploadImgStore();
+  const [fileList, setFileList] = useState<UploadedFile[]>([]);
 
   const onSubmit = (values: PromptForm) => {
     const formData = new FormData();
@@ -28,18 +36,81 @@ export default function PromptInput() {
     //postData()
   };
 
+  const handleFileUpload = (files: File[]) => {
+    console.log("handleFileUplaoded called");
+    if (files.length > 0) {
+      const fl = files.map((file) => {
+        const previewUrl = URL.createObjectURL(file);
+
+        return { previewUrl, file };
+      });
+
+      setFileList([...fileList, ...fl]);
+
+      console.log("file uploaded");
+    }
+  };
+
   const handleResizeHeight = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const textarea = e.target;
     textarea.style.height = "auto";
     textarea.style.height = `${textarea.scrollHeight}px`;
   };
 
+  const removeImages = (imgUrl: string) => {
+    if (imgs.includes(imgUrl)) {
+      setUploadImgs(imgs.filter((img) => img !== imgUrl));
+      return;
+    }
+
+    const fileToRemove = fileList.find(
+      ({ previewUrl }) => previewUrl === imgUrl
+    );
+
+    if (!fileToRemove) return;
+
+    URL.revokeObjectURL(imgUrl);
+    setFileList(fileList.filter(({ previewUrl }) => previewUrl !== imgUrl));
+
+    const currentFormFiles = form.getValues("files") ?? [];
+    const updatedFormFiles = currentFormFiles.filter(
+      (file) => file !== fileToRemove.file
+    );
+
+    form.setValue("files", updatedFormFiles, { shouldValidate: true });
+  };
+
+  useEffect(() => {
+    return () =>
+      fileList.forEach((file) => {
+        URL.revokeObjectURL(file.previewUrl);
+      });
+  }, [fileList]);
+
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full mx-12 sm:mx-20 flex flex-col gap-2 bg-prompt rounded-xl p-2"
+        className="w-4/5 max-w-4xl mx-auto flex flex-col gap-2 bg-textbox rounded-xl p-2"
       >
+        <div className="flex gap-2 items-center">
+          {imgs.map((img) => (
+            <UploadedImage
+              key={img}
+              src={img}
+              alt={img}
+              removeImage={removeImages}
+            />
+          ))}
+          {fileList.map((file) => (
+            <UploadedImage
+              key={file.previewUrl}
+              src={file.previewUrl}
+              alt={file.previewUrl}
+              removeImage={removeImages}
+            />
+          ))}
+        </div>
         <FormField
           control={form.control}
           name="prompt"
@@ -53,7 +124,8 @@ export default function PromptInput() {
                     handleResizeHeight(e);
                   }}
                   {...rest}
-                  className="border-none focus:outline-none resize-none py-4 px-4 min-h-24 max-h-48 md:text-xl "
+                  rows={1}
+                  className="border-none focus:outline-none resize-none py-4 px-4 max-h-48 md:text-2xl "
                 />
               </FormControl>
             </FormItem>
@@ -76,8 +148,15 @@ export default function PromptInput() {
                     accept={ACCEPTED_FILE_TYPES.join(",")}
                     multiple
                     onChange={(e) => {
-                      const files = Array.from(e.target.files ?? []);
-                      onChange(files);
+                      console.log("onChanged Called");
+                      const newFiles = Array.from(e.target.files ?? []);
+                      if (newFiles.length === 0) return;
+
+                      const currentFiles = form.getValues("files") ?? [];
+                      onChange([...currentFiles, ...newFiles]);
+                      handleFileUpload(newFiles);
+
+                      e.target.value = "";
                     }}
                     {...rest}
                     className="hidden"

@@ -29,3 +29,16 @@ export const formatReportDate = (date: string) => {
 
   return date;
 };
+
+export const imageUrlMap = (img: string) => {
+  const n = Number(img[5]);
+
+  switch (n % 3) {
+    case 0:
+      return "/images/cxr_01.jpg";
+    case 1:
+      return "/images/cxr_02.jpeg";
+    default:
+      return "/images/cxr_03.jpeg";
+  }
+};

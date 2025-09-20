@@ -24,15 +24,33 @@ const fileSchema = z
       }),
   ])
   .refine((value) => value instanceof File || typeof value === "string", {
-    message: "파일 또는 URL을 제공하세요.",
+    error: "파일 또는 URL을 제공하세요.",
   });
 
-export const PromptSchema = z.object({
-  prompt: z.string().max(1000, "최대 1000개의 글자를 입력할 수 있습니다."),
-  files: z
-    .array(fileSchema)
-    .max(10, "최대 10개의 파일을 업로드 할 수 있습니다.")
-    .optional(),
-});
+export const PromptSchema = z
+  .object({
+    prompt: z.string().max(1000, "최대 1000개의 글자를 입력할 수 있습니다."),
+    loadedImages: z
+      .array(z.string())
+      .max(10, "최대 10개의 이미지를 업로드 할 수 있습니다.")
+      .optional(),
+    files: z
+      .array(fileSchema)
+      .max(10, "최대 10개의 파일을 업로드 할 수 있습니다.")
+      .optional(),
+  })
+  .refine(
+    ({ loadedImages, files }) =>
+      (loadedImages?.length ?? 0) + (files?.length ?? 0) <= 10,
+    { error: "최대 10개의 파일을 업로드 할 수 있습니다." }
+  );
 
 export type PromptForm = z.infer<typeof PromptSchema>;
+
+export const PatientImagesSchema = z.object({
+  images: z.array(z.string()).refine((value) => value.some((image) => image), {
+    error: "You have to select at least one image.",
+  }),
+});
+
+export type PatientImagesForm = z.infer<typeof PatientImagesSchema>;

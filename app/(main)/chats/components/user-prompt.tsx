@@ -13,7 +13,7 @@ type Props = {
 const imgMap = (img: string) => {
   const n = Number(img[2]);
 
-  switch (n % 2) {
+  switch (n % 3) {
     case 0:
       return "/images/cxr_01.jpg";
     case 1:
@@ -41,7 +41,7 @@ export default function UserPrompt({ content, image, patient }: Props) {
           ))}
         </div>
       )}
-      <div className="bg-[#1E1E28] rounded-xl w-xl p-4 text-lg font-medium">
+      <div className="bg-[#1E1E28] rounded-xl w-1/2 p-4 text-lg font-medium">
         {content}
       </div>
     </div>

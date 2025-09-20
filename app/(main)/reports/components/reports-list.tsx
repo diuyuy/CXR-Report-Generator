@@ -81,14 +81,16 @@ export default function ReportsList() {
     <>
       {dates.map((date) => (
         <SidebarGroup key={date}>
-          <SidebarGroupLabel>{formatReportDate(date)}</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-lg">
+            {formatReportDate(date)}
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {reportMap[date].map((report) => (
                 <SidebarMenuItem key={report.patientPid}>
-                  <SidebarMenuButton asChild className="rounded-3xl">
+                  <SidebarMenuButton asChild className="rounded-3xl text-lg">
                     <Link href={`${ROUTE_PATHS.REPORT}/${report.reportId}`}>
-                      <span className="text-white">{`${report.patientPid} ${report.patientName}`}</span>
+                      <span className="text-white text-lg">{`${report.patientPid} ${report.patientName}`}</span>
                       {`(${report.shootingDate})`}
                     </Link>
                   </SidebarMenuButton>
@@ -98,7 +100,7 @@ export default function ReportsList() {
           </SidebarGroupContent>
         </SidebarGroup>
       ))}
-      <div ref={observerRef} className="h-1" />
+      <div ref={observerRef} className="h-4" />
       {isFetchingNextPage && <ClipLoader color="gray" />}
     </>
   );

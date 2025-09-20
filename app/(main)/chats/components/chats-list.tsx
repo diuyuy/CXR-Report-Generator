@@ -110,7 +110,7 @@ export default function ChatsList() {
           </SidebarGroup>
         );
       })}
-      <div ref={observerRef} className="h-1" />
+      <div ref={observerRef} className="h-4" />
       {isFetchingNextPage && <ClipLoader color="gray" />}
     </div>
   );

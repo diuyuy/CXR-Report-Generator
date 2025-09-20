@@ -38,8 +38,8 @@ export default function ChatHistoryPage() {
   }
 
   return (
-    <div className="h-full py-4 px-8 flex flex-col">
-      <div className="flex-1 overflow-y-auto scrollbar-hide p-6">
+    <div className="h-full w-full py-4 flex flex-col">
+      <div className="w-5/6 max-w-4xl mx-auto overflow-y-auto scrollbar-hide p-6">
         {chatHistory.messages.map((msg, i) => {
           return (
             <div key={msg.messageId}>
