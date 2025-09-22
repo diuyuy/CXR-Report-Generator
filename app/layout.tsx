@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "./globals.css";
+import { Toaster } from "sonner";
 import QueryProvider from "@/providers/query-provider";
 
 const pretendard = localFont({
@@ -77,6 +78,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <Toaster position="top-center" />
           </ThemeProvider>
         </QueryProvider>
       </body>

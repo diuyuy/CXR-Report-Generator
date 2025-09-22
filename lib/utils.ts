@@ -42,3 +42,28 @@ export const imageUrlMap = (img: string) => {
       return "/images/cxr_03.jpeg";
   }
 };
+
+/**
+ * Creates a debounced function that delays invoking `fn` until after `delay` milliseconds have elapsed
+ * since the last time the debounced function was invoked.
+ *
+ * @template T The type of the function to debounce.
+ * @param {T} fn The function to debounce.
+ * @param {number} delay The number of milliseconds to delay.
+ * @returns {(...args: Parameters<T>) => void} Returns the new debounced function.
+ */
+// biome-ignore lint/suspicious/noExplicitAny: <>
+export function debounce<T extends (...args: any[]) => void>(
+  fn: T,
+  delay: number
+) {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+
+  return (...args: Parameters<T>) => {
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    timer = setTimeout(fn, delay, ...args);
+  };
+}

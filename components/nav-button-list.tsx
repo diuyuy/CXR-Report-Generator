@@ -3,8 +3,9 @@
 import { ArrowDownToLineIcon, ChevronLeftIcon, PlusIcon } from "lucide-react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
+import { useState } from "react";
 import { ClipLoader } from "react-spinners";
-import { usePdfContext } from "@/app/(main)/contexts/use-pdf-context";
+import { toast } from "sonner";
 import { useIsReportDetail } from "@/app/(main)/hooks/use-is-report-detail";
 import { useReportDetailQuery } from "@/app/(main)/reports/hooks/use-report-detail-query";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,7 @@ import { ERROR_MESSAGE } from "@/constants/error-messages";
 import { ROUTE_PATHS } from "@/constants/route-paths";
 import { generatePdf } from "@/lib/apis/report-api";
 import { useNavViewStore } from "@/stores/use-nav-view-store";
+import CustomClipLoader from "./custom-clip-loader";
 
 export default function NavButtonList() {
   const { activeView, setActiveView } = useNavViewStore();
@@ -83,15 +85,16 @@ function ReportDetailButtonList() {
   const params = useParams();
   const reportId = params.reportId as string;
   const { setActiveView } = useNavViewStore();
+  const [isDownloading, setIsDownloading] = useState(false);
   // const { handleDownloadPdf } = usePdfContext();
 
   const handleDownloadPdf = async () => {
+    setIsDownloading(true);
     try {
       const blob = await generatePdf(reportId);
-
       const url = URL.createObjectURL(blob);
-
       const a = document.createElement("a");
+
       a.href = url;
 
       // 4. 다운로드할 파일 이름을 지정합니다.
@@ -103,9 +106,12 @@ function ReportDetailButtonList() {
 
       // 6. 사용이 끝난 객체와 <a> 태그를 정리합니다.
       a.remove();
+
       URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error(error);
+      setIsDownloading(false);
+    } catch (_) {
+      setIsDownloading(false);
+      toast.error(ERROR_MESSAGE.generatePdfError);
     }
   };
 
@@ -137,9 +143,13 @@ function ReportDetailButtonList() {
           Report
         </Button>
       </div>
-      <Button variant={"ghost"} onClick={handleDownloadPdf}>
-        <ArrowDownToLineIcon color="white" className="size-7" />
-      </Button>
+      {isDownloading ? (
+        <CustomClipLoader />
+      ) : (
+        <Button variant={"ghost"} onClick={handleDownloadPdf}>
+          <ArrowDownToLineIcon color="white" className="size-7" />
+        </Button>
+      )}
     </div>
   );
 }

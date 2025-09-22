@@ -13,11 +13,7 @@ import { useChatDetailQuery } from "../hooks/use-chat-detail-query";
 
 export default function ChatHistoryPage() {
   const params = useParams();
-  const chatId = params.chatId;
-
-  if (!chatId || Array.isArray(chatId)) {
-    redirect(ROUTE_PATHS.CHATS);
-  }
+  const chatId = params.chatId as string;
 
   const { isPending, isError, data: chatHistory } = useChatDetailQuery(chatId);
 
@@ -38,7 +34,10 @@ export default function ChatHistoryPage() {
   }
 
   return (
-    <div className="h-full w-full py-4 flex flex-col">
+    <div className="relative h-full w-full pb-4 flex flex-col justify-between">
+      <p className="absolute top-4 left-4">
+        {`${chatHistory.patient.id} ${chatHistory.patient.patientName} (${chatHistory.patient.age}세/${chatHistory.patient.gender})`}
+      </p>
       <div className="w-5/6 max-w-4xl mx-auto overflow-y-auto scrollbar-hide p-6">
         {chatHistory.messages.map((msg, i) => {
           return (
@@ -57,7 +56,7 @@ export default function ChatHistoryPage() {
           );
         })}
       </div>
-      <div className="flex mb-4">
+      <div className="flex mb-14">
         <PromptInput />
       </div>
     </div>

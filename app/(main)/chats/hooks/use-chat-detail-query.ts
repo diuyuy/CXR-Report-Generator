@@ -8,11 +8,11 @@ const fetchChatDetail = async (chatId: string) => {
   const { patients } = patientsMocks;
 
   const session = sessions.find((session) => session.id === chatId);
-  if (!session) return session;
+  if (!session) throw Error("Session doesn't exist.");
 
   const { patientName, ...rest } = session;
   const patient = patients.find((p) => p.name === patientName);
-  if (!patient) return patient;
+  if (!patient) throw Error("Session doesn't exist.");
 
   const { id, gender, age } = patient;
 

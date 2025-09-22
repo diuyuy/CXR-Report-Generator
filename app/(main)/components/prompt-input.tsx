@@ -33,7 +33,7 @@ export default function PromptInput() {
       formData.append("files", file);
     });
 
-    //postData()
+    //postData() 이때 patientId 도 같이 전송.
   };
 
   const handleFileUpload = (files: File[]) => {

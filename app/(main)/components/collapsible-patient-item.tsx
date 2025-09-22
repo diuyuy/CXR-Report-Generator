@@ -71,7 +71,7 @@ export default function CollapsiblePatientItem({
                     );
               }}
             />
-            <Label htmlFor={img.id} className="text-base">
+            <Label htmlFor={img.id} className="text-base hover:cursor-pointer">
               <ImageIcon size={20} />
               {img.filename}
               <span className="text-xs text-light-gray">{`(${img.date})`}</span>

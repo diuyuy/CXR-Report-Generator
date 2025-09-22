@@ -17,7 +17,7 @@ export default async function ReportPdfPage({ params }: Props) {
   return (
     <main className="py-4 p-8">
       <div className="flex flex-col gap-4">
-        <h1 className="text-2xl font-bold">Report</h1>
+        <h1 className="text-2xl font-bold mb-4">Report</h1>
         <div className="flex gap-8">
           <div className="flex-1 min-h-100 ">
             <Image

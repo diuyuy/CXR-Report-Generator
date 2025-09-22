@@ -22,7 +22,7 @@ export default function PatientInformationCard({
           <PencilIcon />
         </Button>
       </div>
-      <ul className="list-disc list-inside">
+      <ul className="list-disc list-inside space-y-1">
         <li>Age: {age}</li>
         <li>Gender: {gender}</li>
         <li>Shooting Date: {shootingDate}</li>
