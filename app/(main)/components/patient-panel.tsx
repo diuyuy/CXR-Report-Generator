@@ -2,6 +2,7 @@ import { CircleXIcon, MinusIcon } from "lucide-react";
 import { type ChangeEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { debounce } from "@/lib/utils";
+import { useUploadImgStore } from "@/stores/use-upload-img-store";
 import PatientList from "./patient-list";
 import SearchedPatientsList from "./searched-patients-list";
 
@@ -9,6 +10,8 @@ export default function PatientPanel() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [patientsQuery, setPatientsQuery] = useState("");
+
+  const { setUploadImgs } = useUploadImgStore();
 
   const handleOnQueryChange = debounce((e: ChangeEvent<HTMLInputElement>) => {
     setPatientsQuery(e.target.value);
@@ -47,7 +50,14 @@ export default function PatientPanel() {
                   <CircleXIcon className="absolute right-2 top-1/2 -translate-y-1/2 size-5" />
                 </button>
               </div>
-              <Button variant={"outline"} onClick={() => setIsSearching(false)}>
+              <Button
+                variant={"outline"}
+                onClick={() => {
+                  setIsSearching(false);
+                  setUploadImgs([]);
+                  setPatientsQuery("");
+                }}
+              >
                 Cancel
               </Button>
             </div>
@@ -75,7 +85,7 @@ export default function PatientPanel() {
           onClick={() => setIsOpen(true)}
           className="absolute top-8 right-4 rotate-270 origin-right bg-[#5856D6] text-white font-medium py-2 px-4 rounded-t-md hover:cursor-pointer whitespace-nowrap hover:bg-[#5856D6]/90"
         >
-          Patients
+          Patient
         </button>
       )}
     </>

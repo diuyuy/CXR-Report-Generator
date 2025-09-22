@@ -4,7 +4,7 @@ import {
   CircleIcon,
   ImageIcon,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
 import { Label } from "@/components/ui/label";
 import { RadioCheckbox } from "@/components/ui/radio-checkbox";
@@ -25,12 +25,17 @@ export default function CollapsiblePatientItem({
   const [checkedImages, setCheckedImages] = useState<string[]>([]);
   const { imgs, setUploadImgs } = useUploadImgStore();
 
+  useEffect(() => {
+    if (!isOpen) setCheckedImages([]);
+  }, [isOpen]);
+
   return (
     <Collapsible open={isOpen} className="flex flex-col gap-3">
       <button
         type="button"
         onClick={() => {
           isOpen ? setSelectedPatient(null) : setSelectedPatient(patient.id);
+          setUploadImgs([]);
         }}
         className="hover:cursor-pointer flex justify-between items-center p-2"
       >

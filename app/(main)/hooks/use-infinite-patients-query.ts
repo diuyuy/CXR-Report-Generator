@@ -4,6 +4,7 @@ import { QUERY_KEYS } from "@/constants/query-keys";
 import patientsMock from "../../../mock_data/patients.json";
 
 const { patients } = patientsMock;
+
 const CURSOR = 15;
 
 const fetchPatients = async ({ pageParam }: { pageParam: number }) => {
