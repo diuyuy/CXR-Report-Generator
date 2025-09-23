@@ -10,6 +10,19 @@ import type { ReportData } from "../../types/types";
 import { useReportDetailQuery } from "../hooks/use-report-detail-query";
 import { useReportMutation } from "../hooks/use-report-mutation";
 
+const imgMap = (img: string) => {
+  const n = Number(img[2]);
+
+  switch (n % 3) {
+    case 0:
+      return "/images/cxr_01.jpg";
+    case 1:
+      return "/images/cxr_02.jpeg";
+    default:
+      return "/images/cxr_03.jpeg";
+  }
+};
+
 export default function ReportDetail() {
   const params = useParams();
 
@@ -46,7 +59,7 @@ export default function ReportDetail() {
       <div className="flex gap-8">
         <div className="flex-1 min-h-100 ">
           <Image
-            src="/images/cxr_02.jpeg"
+            src={imgMap(report.patientImage)}
             alt="cxr_02"
             width={300}
             height={380}
