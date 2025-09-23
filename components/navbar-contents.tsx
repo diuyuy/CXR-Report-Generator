@@ -14,10 +14,10 @@ export default function NavbarContents() {
 
   return (
     <div className="mb-5">
-      {isChat ? (
-        <ChatsList />
-      ) : isReportDetail ? (
+      {isReportDetail ? (
         <ReportDetail />
+      ) : isChat ? (
+        <ChatsList />
       ) : (
         <ReportsList />
       )}

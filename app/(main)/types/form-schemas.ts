@@ -47,10 +47,21 @@ export const PromptSchema = z
 
 export type PromptForm = z.infer<typeof PromptSchema>;
 
-export const PatientImagesSchema = z.object({
-  images: z.array(z.string()).refine((value) => value.some((image) => image), {
-    error: "You have to select at least one image.",
-  }),
+//PatientInfoForm
+export const PatientInfoSchema = z.object({
+  age: z.string().min(1, "Invalid Age.").max(2, "Invalid Age."),
+  gender: z.union([z.literal("남"), z.literal("여")], "Invalid gender."),
+  shootingDate: z.iso.date("Invalid date format."),
 });
 
-export type PatientImagesForm = z.infer<typeof PatientImagesSchema>;
+export type PatientInfoForm = z.infer<typeof PatientInfoSchema>;
+
+//Diagnosis
+export const DiagnosisSchema = z.object({
+  disease: z.string(),
+  location: z.string(),
+  size: z.string(),
+  symptoms: z.string(),
+});
+
+export type DiagnosisForm = z.infer<typeof DiagnosisSchema>;

@@ -6,7 +6,7 @@ export const fetchPatientsByQuery = (query: string) => {
   if (query === "") return [];
 
   const matchedPatients = patient.filter((patient) => {
-    const patientTitle = `${patient.id}${patient.name} ${patient.age} ${patient.shootingDate}`;
+    const patientTitle = `${patient.id}${patient.name} ${patient.age}세 ${patient.shootingDate}`;
 
     return patientTitle.includes(query);
   });

@@ -6,9 +6,12 @@ export async function POST(req: NextRequest) {
     const { pdfUrl } = await req.json();
 
     if (!pdfUrl) {
-      return new NextResponse(JSON.stringify({ message: "Invalid pdf Url." }), {
-        status: 400,
-      });
+      return NextResponse.json(
+        { message: "Invalid pdf Url." },
+        {
+          status: 400,
+        }
+      );
     }
 
     const browser = await puppeteer.launch({
@@ -42,8 +45,8 @@ export async function POST(req: NextRequest) {
     });
   } catch (error) {
     console.error("Generate pdf error: ", error);
-    return new NextResponse(
-      JSON.stringify({ message: "Failed to generate PDF." }),
+    return NextResponse.json(
+      { message: "Failed to generate PDF." },
       { status: 500 }
     );
   }
