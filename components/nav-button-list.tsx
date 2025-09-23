@@ -98,7 +98,7 @@ function ReportDetailButtonList() {
       a.href = url;
 
       // 4. 다운로드할 파일 이름을 지정합니다.
-      a.download = "generated-document.pdf";
+      a.download = "generated-report.pdf";
 
       // 5. <a> 태그를 body에 추가하고 클릭 이벤트를 실행합니다.
       document.body.appendChild(a);

@@ -35,7 +35,7 @@ export default function CollapsiblePatientItem({
         type="button"
         onClick={() => {
           isOpen ? setSelectedPatient(null) : setSelectedPatient(patient.id);
-          setUploadImgs([]);
+          setUploadImgs(null, []);
         }}
         className="hover:cursor-pointer flex justify-between items-center p-2"
       >
@@ -87,7 +87,7 @@ export default function CollapsiblePatientItem({
           <button
             type="button"
             onClick={() => {
-              setUploadImgs([
+              setUploadImgs(patient.id, [
                 ...imgs,
                 ...checkedImages.filter((img) => !imgs.includes(img)),
               ]);

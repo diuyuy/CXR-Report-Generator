@@ -11,7 +11,10 @@ type Props = {
 export default function SearchedPatientsList({ query }: Props) {
   const [selectedPatient, setSelectedPatient] = useState<string | null>(null);
 
+  console.log("query: ", query);
+
   const { isPending, isError, data: patients } = useSearchPatientsQuery(query);
+  console.log("🚀 ~ SearchedPatientsList ~ patients:", patients);
 
   if (isPending) {
     return <CustomClipLoader />;

@@ -23,7 +23,7 @@ type UploadedFile = {
 
 export default function PromptInput() {
   const form = usePromptForm();
-  const { imgs, setUploadImgs } = useUploadImgStore();
+  const { patientId, imgs, setUploadImgs } = useUploadImgStore();
   const [fileList, setFileList] = useState<UploadedFile[]>([]);
 
   const onSubmit = (values: PromptForm) => {
@@ -59,7 +59,10 @@ export default function PromptInput() {
 
   const removeImages = (imgUrl: string) => {
     if (imgs.includes(imgUrl)) {
-      setUploadImgs(imgs.filter((img) => img !== imgUrl));
+      setUploadImgs(
+        patientId,
+        imgs.filter((img) => img !== imgUrl)
+      );
       return;
     }
 

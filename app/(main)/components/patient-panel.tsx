@@ -1,5 +1,5 @@
-import { CircleXIcon, MinusIcon } from "lucide-react";
-import { type ChangeEvent, useState } from "react";
+import { CircleXIcon, MinusIcon, SearchIcon } from "lucide-react";
+import { type ChangeEvent, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { debounce } from "@/lib/utils";
 import { useUploadImgStore } from "@/stores/use-upload-img-store";
@@ -10,12 +10,21 @@ export default function PatientPanel() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [patientsQuery, setPatientsQuery] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const { setUploadImgs } = useUploadImgStore();
 
   const handleOnQueryChange = debounce((e: ChangeEvent<HTMLInputElement>) => {
     setPatientsQuery(e.target.value);
   }, 500);
+
+  useEffect(() => {
+    if (!inputRef.current) return;
+
+    if (isSearching) {
+      inputRef.current.focus();
+    }
+  }, [isSearching]);
 
   return (
     <>
@@ -40,22 +49,27 @@ export default function PatientPanel() {
                   type="text"
                   onChange={handleOnQueryChange}
                   placeholder="Searching..."
+                  ref={inputRef}
                   className="w-full h-full focus:outline-none"
                 />
                 <button
                   type="button"
-                  onClick={() => setPatientsQuery("")}
-                  className="absolute right-0 top-1/2 -translate-1/2 hover:cursor-pointer"
+                  onClick={() => {
+                    setPatientsQuery("");
+                    if (inputRef.current) inputRef.current.value = "";
+                  }}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 hover:cursor-pointer"
                 >
-                  <CircleXIcon className="absolute right-2 top-1/2 -translate-y-1/2 size-5" />
+                  <CircleXIcon />
                 </button>
               </div>
               <Button
                 variant={"outline"}
                 onClick={() => {
-                  setIsSearching(false);
-                  setUploadImgs([]);
+                  setUploadImgs(null, []);
                   setPatientsQuery("");
+                  if (inputRef.current) inputRef.current.value = "";
+                  setIsSearching(false);
                 }}
               >
                 Cancel
@@ -69,7 +83,7 @@ export default function PatientPanel() {
             >
               <div className="w-full relative bg-[#494952] rounded-md mb-4 py-2 px-4 text-lg font-medium">
                 Search
-                <CircleXIcon className="absolute right-2 top-1/2 -translate-y-1/2 size-5" />
+                <SearchIcon className="absolute right-2 top-1/2 -translate-y-1/2 size-5" />
               </div>
             </button>
           )}
