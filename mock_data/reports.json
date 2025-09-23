@@ -1,7 +1,7 @@
 {
   "reports": [
     {
-      "reportId": 9007199254742000,
+      "reportId": "9007199254742000",
       "patientName": "홍길동",
       "patientPid": "PID001",
       "examDate": "2024-01-10T07:08:20.338389",
@@ -18,7 +18,7 @@
       "impression": "Impression: Pneumonia suspected."
     },
     {
-      "reportId": 9007199254742001,
+      "reportId": "9007199254742001",
       "patientName": "김영희",
       "patientPid": "PID002",
       "examDate": "2024-03-12T14:53:47.713301",
@@ -35,7 +35,7 @@
       "impression": "Impression: Pleural Effusion suspected."
     },
     {
-      "reportId": 9007199254742002,
+      "reportId": "9007199254742002",
       "patientName": "이철수",
       "patientPid": "PID003",
       "examDate": "2025-10-03T15:38:37.797943",
@@ -52,7 +52,7 @@
       "impression": "Impression: Interstitial Lung Disease suspected."
     },
     {
-      "reportId": 9007199254742003,
+      "reportId": "9007199254742003",
       "patientName": "박민수",
       "patientPid": "PID004",
       "examDate": "2024-06-30T14:08:52.658230",
@@ -69,7 +69,7 @@
       "impression": "Impression: Pleural Effusion suspected."
     },
     {
-      "reportId": 9007199254742004,
+      "reportId": "9007199254742004",
       "patientName": "최수지",
       "patientPid": "PID005",
       "examDate": "2025-08-07T05:06:08.016694",
@@ -86,7 +86,7 @@
       "impression": "Impression: Pneumonia suspected."
     },
     {
-      "reportId": 9007199254742005,
+      "reportId": "9007199254742005",
       "patientName": "정하늘",
       "patientPid": "PID006",
       "examDate": "2025-01-26T20:15:39.834731",
@@ -103,7 +103,7 @@
       "impression": "Impression: Pneumonia suspected."
     },
     {
-      "reportId": 9007199254742006,
+      "reportId": "9007199254742006",
       "patientName": "윤지호",
       "patientPid": "PID007",
       "examDate": "2025-12-14T18:43:01.147363",
@@ -120,7 +120,7 @@
       "impression": "Impression: Pneumonia suspected."
     },
     {
-      "reportId": 9007199254742007,
+      "reportId": "9007199254742007",
       "patientName": "서유리",
       "patientPid": "PID008",
       "examDate": "2024-07-28T01:25:19.451127",
@@ -137,7 +137,7 @@
       "impression": "Impression: Interstitial Lung Disease suspected."
     },
     {
-      "reportId": 9007199254742008,
+      "reportId": "9007199254742008",
       "patientName": "강준호",
       "patientPid": "PID009",
       "examDate": "2024-08-30T04:12:09.169075",
@@ -154,7 +154,7 @@
       "impression": "Impression: Interstitial Lung Disease suspected."
     },
     {
-      "reportId": 9007199254742009,
+      "reportId": "9007199254742009",
       "patientName": "한지민",
       "patientPid": "PID010",
       "examDate": "2025-07-04T05:49:37.513414",
@@ -171,7 +171,7 @@
       "impression": "Impression: Pneumonia suspected."
     },
     {
-      "reportId": 9007199254742010,
+      "reportId": "9007199254742010",
       "patientName": "오세훈",
       "patientPid": "PID011",
       "examDate": "2025-07-01T04:13:13.042261",
@@ -188,7 +188,7 @@
       "impression": "Impression: Pneumonia suspected."
     },
     {
-      "reportId": 9007199254742011,
+      "reportId": "9007199254742011",
       "patientName": "류다현",
       "patientPid": "PID012",
       "examDate": "2025-03-31T20:32:16.905548",
@@ -205,7 +205,7 @@
       "impression": "Impression: Interstitial Lung Disease suspected."
     },
     {
-      "reportId": 9007199254742012,
+      "reportId": "9007199254742012",
       "patientName": "배정우",
       "patientPid": "PID013",
       "examDate": "2024-12-22T16:05:43.906857",
@@ -222,7 +222,7 @@
       "impression": "Impression: Interstitial Lung Disease suspected."
     },
     {
-      "reportId": 9007199254742013,
+      "reportId": "9007199254742013",
       "patientName": "송하영",
       "patientPid": "PID014",
       "examDate": "2024-12-04T09:27:15.885723",
@@ -239,7 +239,7 @@
       "impression": "Impression: Mass suspected."
     },
     {
-      "reportId": 9007199254742014,
+      "reportId": "9007199254742014",
       "patientName": "조민혁",
       "patientPid": "PID015",
       "examDate": "2025-11-14T06:50:48.170978",
@@ -256,7 +256,7 @@
       "impression": "Impression: Pleural Effusion suspected."
     },
     {
-      "reportId": 9007199254742015,
+      "reportId": "9007199254742015",
       "patientName": "김다은",
       "patientPid": "PID016",
       "examDate": "2024-10-17T22:22:45.522888",
@@ -273,7 +273,7 @@
       "impression": "Impression: Pleural Effusion suspected."
     },
     {
-      "reportId": 9007199254742016,
+      "reportId": "9007199254742016",
       "patientName": "박시우",
       "patientPid": "PID017",
       "examDate": "2025-01-05T07:33:28.769680",
@@ -290,7 +290,7 @@
       "impression": "Impression: Pleural Effusion suspected."
     },
     {
-      "reportId": 9007199254742017,
+      "reportId": "9007199254742017",
       "patientName": "이서연",
       "patientPid": "PID018",
       "examDate": "2024-12-06T16:53:59.490999",
@@ -307,7 +307,7 @@
       "impression": "Impression: Mass suspected."
     },
     {
-      "reportId": 9007199254742018,
+      "reportId": "9007199254742018",
       "patientName": "전준호",
       "patientPid": "PID019",
       "examDate": "2024-10-12T12:32:37.309950",
@@ -324,7 +324,7 @@
       "impression": "Impression: COPD suspected."
     },
     {
-      "reportId": 9007199254742019,
+      "reportId": "9007199254742019",
       "patientName": "최민경",
       "patientPid": "PID020",
       "examDate": "2024-07-04T23:34:04.837309",
@@ -341,7 +341,7 @@
       "impression": "Impression: Tuberculosis suspected."
     },
     {
-      "reportId": 9007199254742020,
+      "reportId": "9007199254742020",
       "patientName": "하태민",
       "patientPid": "PID021",
       "examDate": "2025-01-19T21:04:09.587336",
@@ -358,7 +358,7 @@
       "impression": "Impression: Pneumonia suspected."
     },
     {
-      "reportId": 9007199254742021,
+      "reportId": "9007199254742021",
       "patientName": "백수진",
       "patientPid": "PID022",
       "examDate": "2024-08-19T06:24:17.005601",
@@ -375,7 +375,7 @@
       "impression": "Impression: Pneumonia suspected."
     },
     {
-      "reportId": 9007199254742022,
+      "reportId": "9007199254742022",
       "patientName": "강지호",
       "patientPid": "PID023",
       "examDate": "2025-08-08T09:15:05.131453",
@@ -392,7 +392,7 @@
       "impression": "Impression: Interstitial Lung Disease suspected."
     },
     {
-      "reportId": 9007199254742023,
+      "reportId": "9007199254742023",
       "patientName": "윤하늘",
       "patientPid": "PID024",
       "examDate": "2024-03-08T15:15:48.611781",
@@ -409,7 +409,7 @@
       "impression": "Impression: Tuberculosis suspected."
     },
     {
-      "reportId": 9007199254742024,
+      "reportId": "9007199254742024",
       "patientName": "서지민",
       "patientPid": "PID025",
       "examDate": "2025-10-16T03:32:43.938638",
@@ -426,7 +426,7 @@
       "impression": "Impression: Pneumonia suspected."
     },
     {
-      "reportId": 9007199254742025,
+      "reportId": "9007199254742025",
       "patientName": "남도윤",
       "patientPid": "PID026",
       "examDate": "2024-02-04T02:25:48.859618",
@@ -443,7 +443,7 @@
       "impression": "Impression: Mass suspected."
     },
     {
-      "reportId": 9007199254742026,
+      "reportId": "9007199254742026",
       "patientName": "이유진",
       "patientPid": "PID027",
       "examDate": "2024-05-24T10:18:15.989880",
@@ -460,7 +460,7 @@
       "impression": "Impression: Tuberculosis suspected."
     },
     {
-      "reportId": 9007199254742027,
+      "reportId": "9007199254742027",
       "patientName": "문채린",
       "patientPid": "PID028",
       "examDate": "2024-03-22T19:35:17.150600",
@@ -477,7 +477,7 @@
       "impression": "Impression: Pleural Effusion suspected."
     },
     {
-      "reportId": 9007199254742028,
+      "reportId": "9007199254742028",
       "patientName": "황서준",
       "patientPid": "PID029",
       "examDate": "2024-02-06T23:39:53.457408",
@@ -494,7 +494,7 @@
       "impression": "Impression: Mass suspected."
     },
     {
-      "reportId": 9007199254742029,
+      "reportId": "9007199254742029",
       "patientName": "고은별",
       "patientPid": "PID030",
       "examDate": "2024-01-04T19:34:16.934662",

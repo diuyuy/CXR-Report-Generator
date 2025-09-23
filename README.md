@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CXR Report Generator
 
-## Getting Started
+## 설치 및 실행 방법
 
-First, run the development server:
+> **참고**: Node.js가 먼저 설치되어 있어야 합니다.
+
+### pnpm 설치
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm i -g pnpm@latest
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### node_modules 설치
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 프로젝트 빌드
 
-## Learn More
+```bash
+pnpm build
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 애플리케이션 실행
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 상태 관리 및 컴포넌트 구조
 
-## Deploy on Vercel
+### 서버 상태 관리
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+API를 통해 받아오는 비동기 데이터인 서버 상태는 **Tanstack Query** 라이브러리를 사용하여 관리했습니다. Tanstack Query가 데이터 캐싱, 리페칭(refetching), 로딩 및 에러처리, 그리고 무한 스크롤 기능들을 쉽게 구현할 수 있게 해줘서 이를 사용했습니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 클라이언트 상태 관리
+
+클라이언트의 상태는 기본적으로 `useState`를 사용해서 관리했고, 우측 패널에서 이미지를 채팅 입력창으로 로드하는 기능의 경우 **zustand**를 사용해서 해당 이미지들을 관리했습니다. 우측 패널과 채팅 입력창이 서로 다른 페이지에 있어서 선택한 이미지를 전역 상태로 관리했어야 했는데, **zusntand**는 **Redux**등의 상태 관리 라이브러리들의 비해 비교적 가볍고 간편하게 사용할 수 있어서 해당 라이브러리를 사용했습니다.

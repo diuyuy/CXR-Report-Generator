@@ -1,3 +1,7 @@
+ignoredBuiltDependencies:
+  - core-js
+
 onlyBuiltDependencies:
   - '@tailwindcss/oxide'
+  - puppeteer
   - sharp
