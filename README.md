@@ -4,6 +4,13 @@
 
 > **참고:** Node.js가 먼저 설치되어 있어야 합니다.
 
+### 프로젝트 클론
+
+```bash
+git clone https://github.com/diuyuy/CXR-Report-Generator.git
+cd CXR-Report-Generator
+```
+
 ### pnpm 설치
 
 ```bash
@@ -116,3 +123,5 @@ cxr-report-generator/
 ![alt text](/readme/search-patients.png)
 
 `debounce`를 사용한 환자 검색 기능을 구현했습니다. 사용자가 검색창에 입력하는 동안 발생하는 모든 키 입력마다 API를 호출하는 대신, 입력이 끝난 후에만 API 요청을 보내 불필요한 네트워크 요청을 최소화하고 서버 부하를 줄였습니다.
+
+## 확장 아이디어
