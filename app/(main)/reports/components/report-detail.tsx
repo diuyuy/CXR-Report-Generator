@@ -6,14 +6,25 @@ import PatientInformationCard from "@/components/patient-information-card";
 import ReportCard from "@/components/report-card";
 import { ERROR_MESSAGE } from "@/constants/error-messages";
 import { usePdfContext } from "../../contexts/use-pdf-context";
+import type { ReportData } from "../../types/types";
 import { useReportDetailQuery } from "../hooks/use-report-detail-query";
+import { useReportMutation } from "../hooks/use-report-mutation";
 
 export default function ReportDetail() {
   const params = useParams();
 
   const reportId = params.reportId as string;
   const { isPending, isError, data: report } = useReportDetailQuery(reportId);
+  const mutation = useReportMutation(reportId);
   const { pdfRef } = usePdfContext();
+
+  const handleUpdateReport = async (values: Partial<ReportData>) => {
+    if (!report) return;
+
+    const updatedReport = { ...report, ...values };
+
+    await mutation.mutateAsync(updatedReport);
+  };
 
   if (isPending) {
     return (
@@ -46,19 +57,41 @@ export default function ReportDetail() {
             age={report.age}
             gender={report.gender}
             shootingDate={report.shootingDate}
+            onUpdate={handleUpdateReport}
           />
           <DiagnosisCard
             disease={report.disease}
             location={report.location}
             size={report.size}
             symptoms={report.symptoms}
+            onUpdate={handleUpdateReport}
           />
         </div>
       </div>
-      <ReportCard title={"Brief summary"} content={report.briefSummary} />
-      <ReportCard title={"Finding"} content={report.finding} />
-      <ReportCard title={"Recommendation"} content={report.recommendation} />
-      <ReportCard title={"Impression"} content={report.impression} />
+      <ReportCard
+        title={"Brief summary"}
+        content={report.briefSummary}
+        propName="briefSummary"
+        onUpdate={handleUpdateReport}
+      />
+      <ReportCard
+        title={"Finding"}
+        content={report.finding}
+        propName="finding"
+        onUpdate={handleUpdateReport}
+      />
+      <ReportCard
+        title={"Recommendation"}
+        content={report.recommendation}
+        propName="recommendation"
+        onUpdate={handleUpdateReport}
+      />
+      <ReportCard
+        title={"Impression"}
+        content={report.impression}
+        propName="impression"
+        onUpdate={handleUpdateReport}
+      />
     </div>
   );
 }

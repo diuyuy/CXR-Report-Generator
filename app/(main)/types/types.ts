@@ -20,13 +20,13 @@ export type ChatSummary = {
   contentSummary: string;
 };
 
-export type Report = {
+export type ReportData = {
   reportId: string;
   patientName: string;
   patientPid: string;
   examDate: string;
   age: number;
-  gender: "남" | "여" | "기타";
+  gender: "남" | "여";
   shootingDate: string;
   disease: string;
   location: string;
@@ -36,10 +36,11 @@ export type Report = {
   finding: string;
   recommendation: string;
   impression: string;
+  patientImage: string;
 };
 
 export type ReportTitle = Pick<
-  Report,
+  ReportData,
   "reportId" | "patientPid" | "patientName" | "shootingDate"
 >;
 

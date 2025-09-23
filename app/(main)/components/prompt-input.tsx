@@ -29,6 +29,9 @@ export default function PromptInput() {
   const onSubmit = (values: PromptForm) => {
     const formData = new FormData();
     formData.append("prompt", values.prompt);
+    imgs.forEach((img) => {
+      formData.append("patientImgs", img);
+    });
     values.files?.forEach((file) => {
       formData.append("files", file);
     });
@@ -125,6 +128,13 @@ export default function PromptInput() {
                   onChange={(e) => {
                     onChange(e);
                     handleResizeHeight(e);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      if (e.shiftKey) return;
+                      e.preventDefault();
+                      form.handleSubmit(onSubmit)();
+                    }
                   }}
                   {...rest}
                   rows={1}
