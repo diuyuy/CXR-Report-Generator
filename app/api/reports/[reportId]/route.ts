@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 import type { ReportData } from "@/app/(main)/types/types";
-import reportMock from "@/mock_data/reports.json";
+import reportMock from "@/mock_data/my_reports.json";
 
 const { reports } = reportMock;
 
