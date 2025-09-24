@@ -114,7 +114,7 @@ export default function DiagnosisCard({
             </BulletPointItem>
             {diagnosisProps.map((prop) => (
               <BulletPointItem key={prop}>
-                <span>{`${prop[0].toUpperCase()}${prop.substring(1)}`}</span>
+                <span>{`${prop[0].toUpperCase()}${prop.substring(1)}: `}</span>
                 {isEditing ? (
                   <FormField
                     control={form.control}

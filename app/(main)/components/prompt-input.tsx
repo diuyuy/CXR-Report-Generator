@@ -40,7 +40,6 @@ export default function PromptInput() {
   };
 
   const handleFileUpload = (files: File[]) => {
-    console.log("handleFileUplaoded called");
     if (files.length > 0) {
       const fl = files.map((file) => {
         const previewUrl = URL.createObjectURL(file);
@@ -49,8 +48,6 @@ export default function PromptInput() {
       });
 
       setFileList([...fileList, ...fl]);
-
-      console.log("file uploaded");
     }
   };
 
@@ -161,7 +158,6 @@ export default function PromptInput() {
                     accept={ACCEPTED_FILE_TYPES.join(",")}
                     multiple
                     onChange={(e) => {
-                      console.log("onChanged Called");
                       const newFiles = Array.from(e.target.files ?? []);
                       if (newFiles.length === 0) return;
 

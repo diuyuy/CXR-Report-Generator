@@ -24,7 +24,6 @@ const imgMap = (img: string) => {
 };
 
 export default function UserPrompt({ content, image, patient }: Props) {
-  console.log(image);
   return (
     <div className="flex flex-col gap-4 items-end">
       {image && (

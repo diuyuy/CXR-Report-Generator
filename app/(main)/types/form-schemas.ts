@@ -49,7 +49,7 @@ export type PromptForm = z.infer<typeof PromptSchema>;
 
 //PatientInfoForm
 export const PatientInfoSchema = z.object({
-  age: z.string().min(1, "Invalid Age.").max(2, "Invalid Age."),
+  age: z.string().min(1, "Invalid Age.").max(3, "Invalid Age."),
   gender: z.union([z.literal("남"), z.literal("여")], "Invalid gender."),
   shootingDate: z.iso.date("Invalid date format."),
 });
