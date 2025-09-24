@@ -1,20 +1,25 @@
 "use client";
 
+import { useParams } from "next/navigation";
 import { BarLoader } from "react-spinners";
 import { Separator } from "@/components/ui/separator";
 import { ERROR_MESSAGE } from "@/constants/error-messages";
 import { ROLE } from "@/constants/role";
 import MarkdownViewer from "../../chats/components/markdown-viewer";
 import UserPrompt from "../../chats/components/user-prompt";
-import { useChatDetailQuery } from "../../chats/hooks/use-chat-detail-query";
 import PromptInput from "../../components/prompt-input";
+import { useChatByReportIdQuery } from "../../hooks/use-chat-by-report-id-query";
 
 export default function ReportDetailPage() {
+  const params = useParams();
+
+  const reportId = params.reportId as string;
+
   const {
     isPending,
     isError,
     data: chatHistory,
-  } = useChatDetailQuery("9007199254741000");
+  } = useChatByReportIdQuery(reportId);
 
   if (isPending) {
     return <BarLoader color="gray" className="w-full" />;
