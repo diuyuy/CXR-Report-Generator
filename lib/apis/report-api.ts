@@ -49,7 +49,7 @@ export const generatePdf = async (reportId: string) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      pdfUrl: `${baseUrl}/pdfs/${reportId}`,
+      pdfUrl: `${baseUrl.substring(0, baseUrl.length - 4)}/pdfs/${reportId}`,
     }),
   });
 
