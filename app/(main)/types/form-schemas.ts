@@ -7,42 +7,42 @@ export const ACCEPTED_FILE_TYPES = [
   "image/jpg",
   "image/png",
   "image/webp",
-  "text/plain",
-  "application/pdf",
+  // "text/plain",
+  // "application/pdf", 향후 추가 계획
 ];
 
 const fileSchema = z
   .union([
     z
       .instanceof(File)
-      .refine((file) => file.size > 0, { message: "파일을 선택하세요." })
+      .refine((file) => file.size > 0, { message: "Please select a file." })
       .refine((file) => file.size <= MAX_FILE_SIZE, {
-        message: "파일 크기는 10MB 이하로 해주세요.",
+        message: "File size must be 10MB or less.",
       })
       .refine((file) => ACCEPTED_FILE_TYPES.includes(file.type), {
-        message: "지원되지 않는 파일 형식입니다.",
+        message: "Unsupported file type.",
       }),
   ])
   .refine((value) => value instanceof File || typeof value === "string", {
-    error: "파일 또는 URL을 제공하세요.",
+    error: "Please provide a file or a URL.",
   });
 
 export const PromptSchema = z
   .object({
-    prompt: z.string().max(1000, "최대 1000개의 글자를 입력할 수 있습니다."),
+    prompt: z.string().max(1000, "Maximum 1000 characters allowed."),
     loadedImages: z
       .array(z.string())
-      .max(10, "최대 10개의 이미지를 업로드 할 수 있습니다.")
+      .max(10, "You can upload a maximum of 10 images.")
       .optional(),
     files: z
       .array(fileSchema)
-      .max(10, "최대 10개의 파일을 업로드 할 수 있습니다.")
+      .max(10, "You can upload a maximum of 10 files.")
       .optional(),
   })
   .refine(
     ({ loadedImages, files }) =>
       (loadedImages?.length ?? 0) + (files?.length ?? 0) <= 10,
-    { error: "최대 10개의 파일을 업로드 할 수 있습니다." }
+    { error: "You can upload a maximum of 10 files in total." }
   );
 
 export type PromptForm = z.infer<typeof PromptSchema>;
